@@ -6,14 +6,14 @@ async function add(user) {
 }
 function findByUserId(id) {
   return db("users as U")
-    .select("U.id", "U.username", "U.password")
-    .where("U.id", id)
+    .select("U.user_id", "U.username", "U.password")
+    .where("U.user_id", id)
     .first();
 }
 
 function findBy(filter) {
   return db("users as U")
-    .select("U.id", "U.username", "U.password")
+    .select("U.user_id", "U.username", "U.password")
     .where(filter);
 }
 
