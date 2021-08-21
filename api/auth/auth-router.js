@@ -17,23 +17,23 @@ router.post("/register", (req, res, next) => {
     .catch(next);
 });
 
-// router.post("/login", checkAuthPayload, (req, res, next) => {
-//   let { username, password } = req.body;
+router.post("/login", checkAuthPayload, (req, res, next) => {
+  let { username, password } = req.body;
 
-//   Users.findBy({ username })
-//     .then(([user]) => {
-//       if (user && bcrypt.compareSync(password, user.password)) {
-//         const token = tokenBuilder(user);
+  Users.findBy({ username })
+    .then(([user]) => {
+      if (user && bcrypt.compareSync(password, user.password)) {
+        const token = tokenBuilder(user);
 
-//         res.status(200).json({
-//           message: `welcome, ${user.username}!`,
-//           token,
-//         });
-//       } else {
-//         next({ status: 401, message: "invalid Credentials" });
-//       }
-//     })
-//     .catch(next);
-// });
+        res.status(200).json({
+          message: `welcome, ${user.username}!`,
+          token,
+        });
+      } else {
+        next({ status: 401, message: "invalid Credentials" });
+      }
+    })
+    .catch(next);
+});
 
 module.exports = router;
