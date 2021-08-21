@@ -17,7 +17,7 @@ router.post("/register", (req, res, next) => {
     .catch(next);
 });
 
-router.post("/login", checkAuthPayload, (req, res, next) => {
+router.post("/login", (req, res, next) => {
   let { username, password } = req.body;
 
   Users.findBy({ username })
