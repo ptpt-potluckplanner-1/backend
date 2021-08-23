@@ -1,5 +1,7 @@
 # backend
 
+---
+
 POST create a user
 [POST] https://potluckplanner-backend.herokuapp.com/api/auth/register
 
@@ -20,9 +22,21 @@ returns the welcome message, user details and token
 },
 "token": "token sequence here"}
 
+---
+
 GET - find all potlucks a user is registered for...
 
 [GET] https://potluckplanner-backend.herokuapp.com/guest/:id
 
 requires guest id.  
 returns an array of potlucks.
+
+---
+
+GET - all potlucks
+
+[GET] https://potluckplanner-backend.herokuapp.com/potluck/
+
+GET - Potluck by id
+
+[GET] https://potluckplanner-backend.herokuapp.com/potluck/:id
