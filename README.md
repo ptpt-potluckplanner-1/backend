@@ -19,3 +19,10 @@ returns the welcome message, user details and token
 "username": "string"
 },
 "token": "token sequence here"}
+
+GET - find all potlucks a user is registered for...
+
+[GET] https://potluckplanner-backend.herokuapp.com/guest/:id
+
+requires guest id.  
+returns an array of potlucks.
