@@ -9,8 +9,8 @@ exports.up = function (knex) {
     .createTable("potlucks", (potlucks) => {
       potlucks.increments("potluck_id");
       potlucks.string("title").notNullable();
-      potlucks.string("date").notNullable();
-      potlucks.string("time").notNullable();
+      potlucks.date("date").notNullable();
+      potlucks.time("time").notNullable();
       potlucks.string("location").notNullable();
       potlucks
         .integer("organizer_id")

@@ -49,3 +49,20 @@ async function updatePotluck(id, potluck) {
   await db("potlucks").where({ potluck_id: id }).update(potluck);
   return findByPotluckId(id);
 }
+
+async function removePotluck(id) {
+  const deletedPotluck = await findByPotluckId(id);
+
+  await db("potlucks").where({ potluck_id: id }).del();
+  return deletedPotluck;
+}
+
+module.exports = {
+  findAll,
+  findAllOrgPotlucks,
+  findAllUserPotlucks,
+  findByPotluckId,
+  addPotluck,
+  updatePotluck,
+  removePotluck,
+};
