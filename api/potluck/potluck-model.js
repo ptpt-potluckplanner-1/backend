@@ -38,7 +38,7 @@ function findByPotluckId(id) {
 // Organizer can create a potluck with
 // name, date, time, location
 
-function addPotluck(potluck) {
+async function addPotluck(potluck) {
   const [id] = await db("potlucks").insert(potluck);
   return findByPotluckId(id);
 }
