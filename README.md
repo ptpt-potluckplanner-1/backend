@@ -1,13 +1,15 @@
 # backend
 
 ---
-| Name         | Type    | Description                              |
-| ------------ | ------- | ---------------------------------------- |
-| username     | String  | <p>The New Users username \*Required</p> |
-| password     | String  | <p>The New Users password \*Required</p> |
-| phone_number | Integer | <p>The New Users phone number<p>         |
-POST create a user
+
+## POST create a user
 [POST] https://potluckplanner-backend.herokuapp.com/api/auth/register
+
+| Name         | Type    | Description                                           |
+| ------------ | ------- | ----------------------------------------------------- |
+| username     | String  | <p>The New Users username \*Required</p>              |
+| password     | String  | <p>The New Users password \*Required</p>              |
+| organizer    | Boolean | <p>Whether User is an Orangizer or not \*Required</p> |
 
 requires object notNullable: {"username": "string", "password": "string", "organizer": boolean}
 
