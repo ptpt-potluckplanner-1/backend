@@ -27,7 +27,7 @@ router.get("/:id", (req, res, next) => {
 
 // GET All items of a potluck
 
-router.get("/:id/all", (req, res, next) => {
+router.get("/all/:id", (req, res, next) => {
   const potluck_id = req.params.id;
   Items.findPotluckItems(potluck_id)
     .then((potluckItems) => {
@@ -38,7 +38,7 @@ router.get("/:id/all", (req, res, next) => {
 
 // POST guest claim item
 
-router.post('/:id/claim"', (req, res, next) => {
+router.post('/claim/:id"', (req, res, next) => {
   const potluck_id = req.params.id;
 
   const guest_id = req.body.guest_id;
