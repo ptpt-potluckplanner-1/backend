@@ -8,6 +8,7 @@ const authRouter = require("./auth/auth-router");
 const guestRouter = require("./users/guest-router");
 const potluckRouter = require("./potluck/potluck-router");
 const organizerRouter = require("./users/organizer-router");
+const itemRouter = require("./items/item-router");
 
 const server = express();
 
@@ -16,9 +17,10 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/api/auth", authRouter);
-server.use("/guest", guestRouter);
-server.use("/organizer", organizerRouter);
-server.use("/potluck", potluckRouter);
+server.use("/api/guest", guestRouter);
+server.use("/api/organizer", organizerRouter);
+server.use("/api/potluck", potluckRouter);
+server.use("/api/item", itemRouter);
 
 server.get("/", (req, res) => {
   res.status(200).json({ message: "api is up!" });
