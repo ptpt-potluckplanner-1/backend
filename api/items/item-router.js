@@ -4,7 +4,7 @@ const Items = require("../items/items-model");
 
 // POST add potluck item
 
-router.post("/:id", (req, res, next) => {
+router.post("/potluck/:id", (req, res, next) => {
   const potluckID = req.params.id;
   const newItem = req.body.item;
   Items.addItem(potluckID, newItem)
