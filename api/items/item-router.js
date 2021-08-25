@@ -50,3 +50,4 @@ router.post('/:id/claim"', (req, res, next) => {
     })
     .catch(next);
 });
+module.exports = router;
