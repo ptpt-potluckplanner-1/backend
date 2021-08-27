@@ -84,6 +84,7 @@ Requires object with key:value pairs defined in table
 | date         | Date    | <p>The Date of the event  \*Required</p>              |
 | time         | Time    | <p>The Time fo the event  \*Required</p>              |
 | location     | String  | <p>The location of the event \*Required</p>           |
+| organizer_id | Integer | <p>The id of the organizer \*Required</p>             |
 
 returns newly added event
 
