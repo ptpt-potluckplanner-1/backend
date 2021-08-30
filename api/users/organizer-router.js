@@ -1,6 +1,7 @@
 const router = require("express").Router();
 
 const Potlucks = require("../potluck/potluck-model");
+const restricted = require("../middleware/restricted");
 
 router.get("/:id", (req, res, next) => {
   Potlucks.findAllOrgPotlucks(req.params.id)
@@ -14,7 +15,7 @@ router.get("/:id", (req, res, next) => {
 });
 
 //create potluck
-router.post("/potluck", (req, res, next) => {
+router.post("/potluck", restricted, (req, res, next) => {
   ///
 
   Potlucks.addPotluck(req.body)
@@ -25,7 +26,7 @@ router.post("/potluck", (req, res, next) => {
 });
 
 //delete potluck
-router.delete("/potluck/:id", (req, res, next) => {
+router.delete("/potluck/:id", restricted, (req, res, next) => {
   ///
   const potluck_id = req.params.id;
 
@@ -37,7 +38,7 @@ router.delete("/potluck/:id", (req, res, next) => {
 });
 
 //update potluck
-router.put("/potluck/:id", (req, res, next) => {
+router.put("/potluck/:id", restricted, (req, res, next) => {
   ///
   const potluck_id = req.params.id;
 
